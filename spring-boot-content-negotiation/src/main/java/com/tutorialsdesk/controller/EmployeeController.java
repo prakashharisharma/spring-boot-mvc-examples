@@ -1,7 +1,9 @@
 package com.tutorialsdesk.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -24,6 +26,10 @@ public class EmployeeController {
 		listOfEmployees.add(new Employee(2, "Rambir"));
 		listOfEmployees.add(new Employee(3, "Sachin"));
 		listOfEmployees.add(new Employee(4, "Martin"));
+	}
+	@GetMapping(value = {"/","test"},produces=MediaType.APPLICATION_JSON_VALUE)
+	public String test() {
+		return "test";
 	}
 	
 	@GetMapping(value = "/employees", produces={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
